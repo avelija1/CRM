@@ -28,7 +28,7 @@ namespace CRMVersion1._0
         public InvoiceWindow()
         {
             InitializeComponent();
-            CRMV1Entities2 _contex = new CRMV1Entities2();
+            CRMV1Entities _contex = new CRMV1Entities();
             Services = _contex.Services.ToList();
             DataContext = this;
 
@@ -73,16 +73,32 @@ namespace CRMVersion1._0
                 TotalTB.Text = (Convert.ToDecimal(PriceTB.Text) * Convert.ToInt32(QuantityTB.Text)).ToString();
             }
         }
-
+        //Save button
         private void button1_Click(object sender, RoutedEventArgs e)
         {
           DataTable dt = ((DataView)dataGrid.ItemsSource).ToTable();
-            foreach (DataRow row in dt.Rows)
+            using (CRMV1Entities _context = new CRMV1Entities())
             {
-                string serviceId=  row["Id"].ToString();
-                string quantity = row["ServiceName"].ToString();
-                string total = row["Total"].ToString();
-                MessageBox.Show(serviceId + quantity + total);
+                long id;
+                if (_context.Items.Count() > 0)
+                {
+                    List<Item> c = _context.Items.ToList();
+                    id = c[_context.Items.Count() - 1].Id + 1;
+                }
+                else
+                {
+                    id = 1;
+                }
+                foreach (DataRow row in dt.Rows)
+                {
+                    int serviceId = Convert.ToInt32(row["Id"].ToString());
+                    int quantity = Convert.ToInt32(row["Quantity"].ToString());
+                    decimal total = Convert.ToDecimal(row["Total"].ToString());
+                    Item i = new Item() { Id=id,ServiceID = serviceId, InvoiceID = 2, Quantity = quantity, Total = total };
+                    _context.Items.Add(i);
+                    id++;
+                }
+                _context.SaveChanges();
             }
         }
 

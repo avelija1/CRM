@@ -192,12 +192,16 @@
     <Compile Include="InvoiceReport.xaml.cs">
       <DependentUpon>InvoiceReport.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceWindow.xaml.cs">
+      <DependentUpon>InvoiceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs">
       <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
       <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ServiceItem.cs" />
     <Compile Include="ServiceWindow.xaml.cs">
       <DependentUpon>ServiceWindow.xaml</DependentUpon>
     </Compile>
@@ -212,6 +216,10 @@
     <Page Include="InvoiceReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InvoiceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -281,6 +289,7 @@
       <DependentUpon>ApplitionDBModel.edmx</DependentUpon>
       <LastGenOutput>ApplitionDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="image.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" />

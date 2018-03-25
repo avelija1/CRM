@@ -152,3 +152,5 @@ C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\RdlC
 C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\RdlCompile.compiled
 C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.exe
 C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.pdb
+C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\InvoiceWindow.g.cs
+C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\InvoiceWindow.baml
