@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="954eed2ebd664ebea0c3f032ca4b319f" Name="Diagram1">
+      <Diagram DiagramId="fd8fb08f71ae4bcfa8f6da06c1670017" Name="Diagram1">
         <EntityTypeShape EntityType="CRMV1Model.Company" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMV1Model.Customer" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMV1Model.Invoice" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMV1Model.Invoice" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CRMV1Model.Item" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CRMV1Model.Service" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CRMV1Model.Service" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="CRMV1Model.FK_Item_0_0" ManuallyRouted="false" />
         <AssociationConnector Association="CRMV1Model.FK_Item_1_0" ManuallyRouted="false" />
       </Diagram>

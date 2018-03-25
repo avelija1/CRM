@@ -46,8 +46,8 @@ namespace CRMVersion1._0
         //Invoices button
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-           // InvoiceWindow invoices = new InvoiceWindow();
-           // invoices.Show();
+            InvoiceWindow invoices = new InvoiceWindow();
+            invoices.Show();
         }
     }
 }

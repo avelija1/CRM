@@ -159,44 +159,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ApplicationDBModel.Context.cs">
+    <Compile Include="ApplitionDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ApplicationDBModel.Context.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationDBModel.cs">
+    <Compile Include="ApplitionDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ApplicationDBModel.Designer.cs">
+    <Compile Include="ApplitionDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ApplicationDBModel.edmx</DependentUpon>
+      <DependentUpon>ApplitionDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Company.cs">
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CompanyWindow.xaml.cs">
       <DependentUpon>CompanyWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerWindow.xaml.cs">
       <DependentUpon>CustomerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Invoice.cs">
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="InvoiceReport.xaml.cs">
       <DependentUpon>InvoiceReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="Item.cs">
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
-      <DependentUpon>ApplicationDBModel.tt</DependentUpon>
+      <DependentUpon>ApplitionDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ServiceWindow.xaml.cs">
       <DependentUpon>ServiceWindow.xaml</DependentUpon>
@@ -249,12 +249,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ApplicationDBModel.edmx">
+    <EntityDeploy Include="ApplitionDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ApplicationDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ApplitionDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ApplicationDBModel.edmx.diagram">
-      <DependentUpon>ApplicationDBModel.edmx</DependentUpon>
+    <None Include="ApplitionDBModel.edmx.diagram">
+      <DependentUpon>ApplitionDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Service.datasource" />
@@ -271,15 +271,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationDBModel.Context.tt">
+    <Content Include="ApplitionDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ApplicationDBModel.edmx</DependentUpon>
-      <LastGenOutput>ApplicationDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>ApplitionDBModel.edmx</DependentUpon>
+      <LastGenOutput>ApplitionDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ApplicationDBModel.tt">
+    <Content Include="ApplitionDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ApplicationDBModel.edmx</DependentUpon>
-      <LastGenOutput>ApplicationDBModel.cs</LastGenOutput>
+      <DependentUpon>ApplitionDBModel.edmx</DependentUpon>
+      <LastGenOutput>ApplitionDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

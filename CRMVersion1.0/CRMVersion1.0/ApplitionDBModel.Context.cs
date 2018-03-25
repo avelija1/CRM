@@ -13,10 +13,10 @@ namespace CRMVersion1._0
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CRMV1Entities2 : DbContext
+    public partial class CRMV1Entities : DbContext
     {
-        public CRMV1Entities2()
-            : base("name=CRMV1Entities2")
+        public CRMV1Entities()
+            : base("name=CRMV1Entities")
         {
         }
     

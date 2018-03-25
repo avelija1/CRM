@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CRMV1Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;C:\Users\840\Documents\Visual Studio 2015\Projects\WpfApplication1\CRMV1.db&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Website" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Data" Type="blob" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="InvoiceDate" Type="real" Nullable="false" />
+    <Property Name="CustomerID" Type="integer" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Item" Type="integer" Nullable="false" />
+    <Property Name="Quantity" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="Total" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+    <Property Name="InvoiceID" Type="integer" Nullable="false" />
+    <Property Name="ServiceID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Item_0_0">
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_1_0">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="ServiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CRMV1ModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" store:Type="Tables" />
+    <AssociationSet Name="FK_Item_0_0" Association="Self.FK_Item_0_0">
+      <End Role="Invoice" EntitySet="Invoice" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_1_0" Association="Self.FK_Item_1_0">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
