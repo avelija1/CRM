@@ -28,19 +28,19 @@
     <Property Name="InvoiceDate" Type="Double" Nullable="false" />
     <Property Name="CustomerID" Type="Int64" Nullable="false" />
     <Property Name="InvoiceNumber" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
-    <NavigationProperty Name="Items" Relationship="Self.FK_Item_1_0" FromRole="Invoice" ToRole="Item" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Item_0_0" FromRole="Invoice" ToRole="Item" />
   </EntityType>
   <EntityType Name="Item">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int64" Nullable="false" />
-    <Property Name="Item1" Type="Int64" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
     <Property Name="Quantity" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
     <Property Name="InvoiceID" Type="Int64" Nullable="false" />
     <Property Name="ServiceID" Type="Int64" Nullable="false" />
-    <NavigationProperty Name="Invoice" Relationship="Self.FK_Item_1_0" FromRole="Item" ToRole="Invoice" />
-    <NavigationProperty Name="Service" Relationship="Self.FK_Item_0_0" FromRole="Item" ToRole="Service" />
+    <NavigationProperty Name="Invoice" Relationship="Self.FK_Item_0_0" FromRole="Item" ToRole="Invoice" />
+    <NavigationProperty Name="Service" Relationship="Self.FK_Item_1_0" FromRole="Item" ToRole="Service" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -49,9 +49,9 @@
     <Property Name="Id" Type="Int64" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Price" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
-    <NavigationProperty Name="Items" Relationship="Self.FK_Item_0_0" FromRole="Service" ToRole="Item" />
+    <NavigationProperty Name="Items" Relationship="Self.FK_Item_1_0" FromRole="Service" ToRole="Item" />
   </EntityType>
-  <Association Name="FK_Item_1_0">
+  <Association Name="FK_Item_0_0">
     <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
     <End Role="Item" Type="Self.Item" Multiplicity="*" />
     <ReferentialConstraint>
@@ -63,7 +63,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Item_0_0">
+  <Association Name="FK_Item_1_0">
     <End Role="Service" Type="Self.Service" Multiplicity="1" />
     <End Role="Item" Type="Self.Item" Multiplicity="*" />
     <ReferentialConstraint>
@@ -75,17 +75,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CRMV1Entities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CRMV1Entities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Companies" EntityType="Self.Company" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Invoices" EntityType="Self.Invoice" />
     <EntitySet Name="Items" EntityType="Self.Item" />
     <EntitySet Name="Services" EntityType="Self.Service" />
-    <AssociationSet Name="FK_Item_1_0" Association="Self.FK_Item_1_0">
+    <AssociationSet Name="FK_Item_0_0" Association="Self.FK_Item_0_0">
       <End Role="Invoice" EntitySet="Invoices" />
       <End Role="Item" EntitySet="Items" />
     </AssociationSet>
-    <AssociationSet Name="FK_Item_0_0" Association="Self.FK_Item_0_0">
+    <AssociationSet Name="FK_Item_1_0" Association="Self.FK_Item_1_0">
       <End Role="Service" EntitySet="Services" />
       <End Role="Item" EntitySet="Items" />
     </AssociationSet>

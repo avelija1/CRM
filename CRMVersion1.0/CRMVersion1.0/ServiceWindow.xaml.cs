@@ -21,12 +21,12 @@ namespace CRMVersion1._0
     {
         private static bool addMode = true;
         private static int idOfServiceToEdit = -1;
-        private CRMV1Entities1 _context;
+        private CRMV1Entities2 _context;
 
         public ServiceWindow()
         {
             InitializeComponent();
-            _context = new CRMV1Entities1();//Opening connection on window initialization, dispose on window_unload!
+            _context = new CRMV1Entities2();//Opening connection on window initialization, dispose on window_unload!
         }
 
 

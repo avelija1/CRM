@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CRMV1ModelStoreContainer" CdmEntityContainer="CRMV1Entities1">
+  <EntityContainerMapping StorageEntityContainer="CRMV1ModelStoreContainer" CdmEntityContainer="CRMV1Entities2">
     <EntitySetMapping Name="Companies">
       <EntityTypeMapping TypeName="CRMV1Model.Company">
         <MappingFragment StoreEntitySet="Company">
@@ -37,7 +37,7 @@
       <EntityTypeMapping TypeName="CRMV1Model.Item">
         <MappingFragment StoreEntitySet="Item">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Item1" ColumnName="Item" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
           <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />

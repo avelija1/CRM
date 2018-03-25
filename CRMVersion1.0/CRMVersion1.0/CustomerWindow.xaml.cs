@@ -22,13 +22,13 @@ namespace CRMVersion1._0
     {
         private static bool addMode = true;
         private static int idOfCustomerToEdit = -1;//auxiliary variable
-        private CRMV1Entities1 _context;
+        private CRMV1Entities2 _context;
 
       
         public CustomerWindow()
         {
             InitializeComponent();
-            _context=new CRMV1Entities1();//Open connection on windows initialization and dispose on window_unloaded event!
+            _context=new CRMV1Entities2();//Open connection on windows initialization and dispose on window_unloaded event!
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
