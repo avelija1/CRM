@@ -5,19 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRMVersion1._0"
         mc:Ignorable="d"
-        Title="CompanyWindow" Height="330.129" Width="547.241">
-    <Grid Margin="0,0,3.6,-0.2">
-        <Label x:Name="label" Content="Company name" HorizontalAlignment="Left" Margin="23,28,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="CompanyNameTB" HorizontalAlignment="Left" Height="23" Margin="132,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <Label x:Name="label1" Content="Adress" HorizontalAlignment="Left" Margin="23,68,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="AdressTB" HorizontalAlignment="Left" Height="23" Margin="132,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label2" Content="Telephone" HorizontalAlignment="Left" Margin="23,116,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TelephoneTB" HorizontalAlignment="Left" Height="23" Margin="132,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label3" Content="Website" HorizontalAlignment="Left" Margin="23,166,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="WebSiteTB" HorizontalAlignment="Left" Height="23" Margin="132,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="430,258,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="322,258,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="110" Margin="272,32,0,0" VerticalAlignment="Top" Width="153"/>
-        <Button x:Name="button2" Content="Select logo" HorizontalAlignment="Left" Margin="444,98,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        Title="CompanyWindow" Height="402.258" Width="547.241" Background="White">
+    <Grid Margin="0,2,4,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="379*"/>
+            <ColumnDefinition Width="157*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FFFFD595" Height="174" Margin="-6,67,-10,0" Stroke="#FFFFD595" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="302,290,0,0" VerticalAlignment="Top" Width="91" Click="button_Click" Foreground="White" Background="#FFFF8A84" FontFamily="Roboto" Height="39" FontSize="16" BorderBrush="White" Grid.ColumnSpan="2"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="190,290,0,0" VerticalAlignment="Top" Width="92" Click="button1_Click" Background="#FFFF8A84" Foreground="White" FontSize="16" FontFamily="Roboto" BorderBrush="White" Height="39"/>
+        <Button x:Name="button2" Content="Select logo" HorizontalAlignment="Left" Margin="23,208,0,0" VerticalAlignment="Top" Width="104" Click="button2_Click" Background="#FFFF8A84" Foreground="White" FontFamily="Roboto" FontSize="16" BorderBrush="#FFFF8A84"/>
+        <Label x:Name="label_Copy" Content="Company name" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" FontFamily="Kollektif" Width="423" Height="52" FontSize="36" Foreground="#FFFFD595" Grid.ColumnSpan="2"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="110" Margin="23,93,0,0" VerticalAlignment="Top" Width="153" OpacityMask="#FFB01919"/>
+        <StackPanel HorizontalAlignment="Left" Height="155" Margin="302,76,0,0" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2">
+            <TextBox x:Name="CompanyNameTB" Text="Company Name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0" />
+            <TextBox x:Name="AdressTB" Text="Adress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
+            <TextBox x:Name="TelephoneTB" Text="Telephone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
+            <TextBox x:Name="WebSiteTB" Text="Website" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
+
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+
+        </StackPanel>
     </Grid>
 </Window>

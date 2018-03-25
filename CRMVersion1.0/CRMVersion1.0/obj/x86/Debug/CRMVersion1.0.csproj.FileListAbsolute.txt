@@ -98,3 +98,4 @@ C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CR
 C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.csproj.GenerateResource.Cache
 C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.exe
 C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.pdb
+C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\CRMVersion1.0.csprojResolveAssemblyReference.cache

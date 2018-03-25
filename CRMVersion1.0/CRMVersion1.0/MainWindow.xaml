@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRMVersion1._0"
         mc:Ignorable="d"
-        Title="MainWindow" Height="374.8" Width="321.8">
+        Title="MainWindow" Height="374.8" Width="733.345">
     <Grid  Margin="0,0,3.6,5.8">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="310*"/>
-            <ColumnDefinition Width="79*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="label" Content="Welcome&#xD;&#xA;" HorizontalAlignment="Left" Margin="78,15,0,0" VerticalAlignment="Top" Width="192" FontWeight="Bold" FontSize="30" Height="69" Grid.ColumnSpan="2"/>
-        <Button x:Name="button" Content="Customers" HorizontalAlignment="Left" Margin="92,146,0,0" VerticalAlignment="Top" Width="119" Height="39" Click="button_Click"/>
-        <Button x:Name="button1" Content="Invoices" HorizontalAlignment="Left" Margin="92,261,0,0" VerticalAlignment="Top" Width="119" Height="40" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Services" HorizontalAlignment="Left" Margin="92,204,0,0" VerticalAlignment="Top" Width="119" Height="40" Click="button2_Click"/>
-        <Button x:Name="button3" Content="My company" HorizontalAlignment="Left" Margin="92,84,0,0" VerticalAlignment="Top" Width="119" Height="45" Click="button3_Click"/>
+        <StackPanel HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="721" Orientation="Horizontal">
+            <Button x:Name="button5" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="39" Background="#FFFFD595" Foreground="White" FontFamily="Roboto" FontSize="14" FontWeight="Bold" BorderBrush="#FFFFD595"/>
+            <Button x:Name="button1" Content="Invoices" HorizontalAlignment="Left" VerticalAlignment="Top" Width="91" Height="39" Click="button1_Click" Background="White" Foreground="#FFFDB51D" BorderBrush="White" FontSize="14"/>
+            <Button x:Name="button_Copy" Content="Customers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Height="39" Click="button_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+            <Button x:Name="button" Content="Customers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="39" Click="button_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+            <Button x:Name="button2" Content="Services" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="39" Click="button2_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+            <Button x:Name="button3" Content="My company" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="39" Click="button3_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+            <Button x:Name="button4" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Height="39" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+        </StackPanel>
 
     </Grid>
 </Window>

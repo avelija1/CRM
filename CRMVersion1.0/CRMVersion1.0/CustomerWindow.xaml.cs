@@ -141,6 +141,7 @@ namespace CRMVersion1._0
                         Id=id,
                         FirstName = FirstNameTB.Text,
                         LastName = LastNameTB.Text
+                        
                     };
                     _context.Customers.Add(newCustomer);
                     _context.SaveChanges();
