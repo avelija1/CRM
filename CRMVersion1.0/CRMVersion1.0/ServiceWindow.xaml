@@ -1,0 +1,40 @@
+﻿<Window x:Class="CRMVersion1._0.ServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRMVersion1._0"
+        mc:Ignorable="d"
+        Title="ServiceWindow" Height="459.214" Width="545.454" Loaded="Window_Loaded" Unloaded="Window_Unloaded">
+    <Grid>
+        <Label x:Name="label" Content="Services" HorizontalAlignment="Left" Margin="34,35,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="18,66,0,0" VerticalAlignment="Top" Height="174" Width="217" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ServiceName}" Header="Service Name"/>
+                <DataGridTextColumn Binding="{Binding Price}"  Header="Price"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="EditButtonEvent" CommandParameter="{Binding Path=ID}" >Edit</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Click="DeleteButtonEvent" CommandParameter="{Binding Path=ID}" >Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="label_Copy" Content="Service name" HorizontalAlignment="Left" Margin="263,89,0,0" VerticalAlignment="Top" Height="26" Width="87"/>
+        <TextBox x:Name="ServiceNameTB" HorizontalAlignment="Left" Height="23" Margin="377,92,-54.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Content="Price" HorizontalAlignment="Left" Margin="263,131,0,0" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="PriceTB" HorizontalAlignment="Left" Height="23" Margin="377,134,-54.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label2" Content="&#xA;" HorizontalAlignment="Left" Margin="256,54,-6.6,0" VerticalAlignment="Top" Width="193"/>
+        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="421,185,-53.6,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="311,185,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+
+    </Grid>
+</Window>
