@@ -7,93 +7,126 @@
         mc:Ignorable="d"
         Title="MainNavigation" Height="513.446" Width="803.361">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="560">
-            <TabControl x:Name="tabControl" Height="322" Margin="0,0,-233,0">
-                <TabItem x:Name="TabHome" Header="Home" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
-                    <TabItem.Background>
-                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TabItem.Background>
-                    <Grid Background="White"/>
-                </TabItem>
-                <TabItem x:Name="TabInvoices" Header="Invoices" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
-                    <TabItem.Background>
-                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TabItem.Background>
-                    <Grid Background="White"/>
-                </TabItem>
-                <TabItem x:Name="TabCustomer" Header="Customer" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
-                    <TabItem.Background>
-                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                            <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TabItem.Background>
-                    <Grid Background="White" Margin="0,0,34,-30">
-                        <Grid >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="399*"/>
-                                <ColumnDefinition Width="408*"/>
-                                <ColumnDefinition Width="9*"/>
-                                <ColumnDefinition Width="14*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label x:Name="label" Content="First name&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="86.8,116,0,0" VerticalAlignment="Top" Height="26" Width="87" Grid.Column="1"/>
-                            <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Height="23" Margin="200.8,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                            <Label x:Name="label1" Content="Last name" HorizontalAlignment="Left" Margin="86.8,158,0,0" VerticalAlignment="Top" Width="98" Grid.Column="1"/>
-                            <TextBox x:Name="LastNameTB" HorizontalAlignment="Left" Height="23" Margin="200.8,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                            <Label x:Name="label2" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="79.8,81,0,0" VerticalAlignment="Top" Width="193" Grid.Column="1"/>
-                            <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="244.8,212,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Grid.Column="1"/>
-                            <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="134.8,212,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" Grid.Column="1"/>
-                            <Label x:Name="label3" Content="Customers" HorizontalAlignment="Left" Margin="38,31,0,0" VerticalAlignment="Top" Width="106"/>
-                            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="38,84,0,0" VerticalAlignment="Top" Height="222" Width="300" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False">
-                                <DataGrid.Columns>
+        <TabControl x:Name="tabControl">
+            <TabItem x:Name="TabHome" Header="Home" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem x:Name="TabInvoices" Header="Invoices" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White"/>
+            </TabItem>
+            <TabItem x:Name="TabCustomer" Header="Customer" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="White" Margin="0,-1,263,-161">
+                    <Grid Margin="0,0,-264,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="399*"/>
+                            <ColumnDefinition Width="408*"/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="14*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="label" Content="First name&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="87,116,0,0" VerticalAlignment="Top" Height="37" Width="87" Grid.Column="1"/>
+                        <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Height="23" Margin="200.8,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                        <Label x:Name="label1" Content="Last name" HorizontalAlignment="Left" Margin="86.8,158,0,0" VerticalAlignment="Top" Width="98" Grid.Column="1"/>
+                        <TextBox x:Name="LastNameTB" HorizontalAlignment="Left" Height="23" Margin="200.8,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                        <Label x:Name="label2" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="79.8,81,0,0" VerticalAlignment="Top" Width="193" Grid.Column="1"/>
+                        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Margin="244.8,212,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Grid.Column="1"/>
+                        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="134.8,212,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" Grid.Column="1"/>
+                        <Label x:Name="label3" Content="Customers" HorizontalAlignment="Left" Margin="38,31,0,0" VerticalAlignment="Top" Width="106"/>
+                        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="38,84,0,0" VerticalAlignment="Top" Height="187" Width="300" RenderTransformOrigin="0.5,0.5" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
 
-                                    <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name"/>
-                                    <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"/>
+                                <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name"/>
+                                <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"/>
 
-                                    <DataGridTemplateColumn>
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Button Click="EditButtonEvent" CommandParameter="{Binding Path=ID}" >Edit</Button>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
-                                    <DataGridTemplateColumn>
-                                        <DataGridTemplateColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <Button Click="DeleteButtonEvent" CommandParameter="{Binding Path=ID}" >Delete</Button>
-                                            </DataTemplate>
-                                        </DataGridTemplateColumn.CellTemplate>
-                                    </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="EditButtonEvent" CommandParameter="{Binding Path=ID}" >Edit</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Click="DeleteButtonEvent" CommandParameter="{Binding Path=ID}" >Delete</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
 
 
-                                </DataGrid.Columns>
-                                <DataGrid.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </DataGrid.RenderTransform>
-                            </DataGrid>
+                            </DataGrid.Columns>
+                            <DataGrid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </DataGrid.RenderTransform>
+                        </DataGrid>
 
-                        </Grid>
                     </Grid>
+                </Grid>
 
 
 
 
-                </TabItem>
+            </TabItem>
+            <TabItem x:Name="TabCompany" Header="Company Information" Foreground="#FFFDB51D" FontFamily="Cabin Condensed" FontSize="18">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
 
+                <Grid Margin="0,2,4,-2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="379*"/>
+                        <ColumnDefinition Width="157*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Fill="#FFFFD595" Height="174" Margin="-6,67,-10,0" Stroke="#FFFFD595" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="302,290,0,0" VerticalAlignment="Top" Width="91" Click="btnSaveComp_Click" Foreground="White" Background="#FFFF8A84" FontFamily="Roboto" Height="39" FontSize="16" BorderBrush="White" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="190,290,0,0" VerticalAlignment="Top" Width="92" Click="button1_Click" Background="#FFFF8A84" Foreground="White" FontSize="16" FontFamily="Roboto" BorderBrush="White" Height="39"/>
+                    <Button x:Name="btnLogo" Content="Select logo" HorizontalAlignment="Left" Margin="23,208,0,0" VerticalAlignment="Top" Width="104" Click="btnLogo_Click" Background="#FFFF8A84" Foreground="White" FontFamily="Roboto" FontSize="16" BorderBrush="#FFFF8A84"/>
+                    <Label x:Name="label_Copy" Content="Company name" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" FontFamily="Kollektif" Width="423" Height="52" FontSize="36" Foreground="#FFFFD595" Grid.ColumnSpan="2"/>
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="110" Margin="23,93,0,0" VerticalAlignment="Top" Width="153" OpacityMask="#FFB01919"/>
+                    <StackPanel HorizontalAlignment="Left" Height="155" Margin="302,76,0,0" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2">
+                        <TextBox x:Name="CompanyNameTB" Text="Company Name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0" />
+                        <TextBox x:Name="AdressTB" Text="Adress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
+                        <TextBox x:Name="TelephoneTB" Text="Telephone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
+                        <TextBox x:Name="WebSiteTB" Text="Website" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
 
-            </TabControl>
-        </StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="Margin" Value="0,10,0,0"/>
+                            </Style>
+                        </StackPanel.Resources>
+
+                    </StackPanel>
+                </Grid>
+
+            </TabItem>
+
+        </TabControl>
+
 
     </Grid>
 </Window>
