@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\
+C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\obj\x86\Debug\
 CRMVersion1._0
 none
 false
 DEBUG;TRACE
-C:\Users\840\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\App.xaml
+C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMVersion1.0\App.xaml
 6628376082
 2-1713970630
-23207754273
-33137749362
+23-646696267
+33-1957473427
 CompanyWindow.xaml;CustomerWindow.xaml;InvoiceReport.xaml;InvoiceWindow.xaml;MainWindow.xaml;ServiceWindow.xaml;
 
-False
+True
 
