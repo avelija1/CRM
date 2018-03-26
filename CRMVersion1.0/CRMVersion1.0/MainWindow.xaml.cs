@@ -49,5 +49,11 @@ namespace CRMVersion1._0
             InvoiceWindow invoices = new InvoiceWindow();
             invoices.Show();
         }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            MainNavigation mainnav = new MainNavigation();
+            mainnav.Show();
+        }
     }
 }

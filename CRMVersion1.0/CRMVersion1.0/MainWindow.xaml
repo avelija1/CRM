@@ -17,7 +17,7 @@
             <Button x:Name="button_Copy" Content="Customers" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Height="39" Click="button_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
             <Button x:Name="button2" Content="Services" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="39" Click="button2_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
             <Button x:Name="button3" Content="My company" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="39" Click="button3_Click" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
-            <Button x:Name="button4" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Height="39" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14"/>
+            <Button x:Name="btnSettings" Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Height="39" Background="White" BorderBrush="White" Foreground="#FFFDB51D" FontFamily="Roboto" FontSize="14" Click="btnSettings_Click"/>
         </StackPanel>
     </Grid>
 </Window>
