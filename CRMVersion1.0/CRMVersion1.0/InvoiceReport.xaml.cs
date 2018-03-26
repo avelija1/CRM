@@ -30,7 +30,7 @@ namespace CRMVersion1._0
         public InvoiceReport(DataTable dt)
         {
             InitializeComponent();
-            using (CRMV1Entities _context = new CRMV1Entities())
+            using (CRMV1Entities1 _context = new CRMV1Entities1())
             {
                 Company myCompany = _context.Companies.First();
                 if (myCompany != null)

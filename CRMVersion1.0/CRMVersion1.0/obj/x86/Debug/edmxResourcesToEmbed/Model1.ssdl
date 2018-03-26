@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CRMV1Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\mirha\Documents\GitHub\CRM\CRMV1.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="CRMV1Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\mirha\Documents\GitHub\CRM\CRMVersion1.0\CRMV1.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Company">
     <Key>
       <PropertyRef Name="Id" />

@@ -75,7 +75,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CRMV1Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="CRMV1Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Companies" EntityType="Self.Company" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Invoices" EntityType="Self.Invoice" />

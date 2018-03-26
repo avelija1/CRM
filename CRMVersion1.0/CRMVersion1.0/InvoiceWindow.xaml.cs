@@ -28,7 +28,7 @@ namespace CRMVersion1._0
         public InvoiceWindow()
         {
             InitializeComponent();
-            CRMV1Entities _contex = new CRMV1Entities();
+            CRMV1Entities1 _contex = new CRMV1Entities1();
             Services = _contex.Services.ToList();
             DataContext = this;
 
@@ -77,7 +77,7 @@ namespace CRMVersion1._0
         private void button1_Click(object sender, RoutedEventArgs e)
         {
           DataTable dt = ((DataView)dataGrid.ItemsSource).ToTable();
-            using (CRMV1Entities _context = new CRMV1Entities())
+            using (CRMV1Entities1 _context = new CRMV1Entities1())
             {
                 long id;
                 if (_context.Items.Count() > 0)

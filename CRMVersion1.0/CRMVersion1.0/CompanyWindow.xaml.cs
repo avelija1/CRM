@@ -22,14 +22,14 @@ namespace CRMVersion1._0
     /// </summary>
     public partial class CompanyWindow : Window
     {
-        private CRMV1Entities _context;
+        private CRMV1Entities1 _context;
         private string fileName;
         private byte[] imageInBytes;
         public CompanyWindow()
         {
             InitializeComponent();
 
-            _context = new CRMV1Entities();
+            _context = new CRMV1Entities1();
             if (_context.Companies.Count()!=0)
             {
                 Company myCompany = _context.Companies.First();

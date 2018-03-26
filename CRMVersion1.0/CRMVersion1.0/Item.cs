@@ -15,9 +15,8 @@ namespace CRMVersion1._0
     public partial class Item
     {
         public long Id { get; set; }
-        public long Item1 { get; set; }
-        public decimal Quantity { get; set; }
         public decimal Total { get; set; }
+        public decimal Quantity { get; set; }
         public long InvoiceID { get; set; }
         public long ServiceID { get; set; }
     
