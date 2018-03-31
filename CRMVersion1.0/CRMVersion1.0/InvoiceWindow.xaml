@@ -3,17 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CRMVersion1._0"
+        xmlns:local="clr-namespace:CRMVersion1._0.Validators"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="InvoiceWindow" Height="542.443" Width="624.588">
+        Title="InvoiceWindow" Height="542.443" Width="712.588">
+
+
+    <Window.Resources>
+        <ControlTemplate x:Key="validationErrorTemplate">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                    <Grid Width="12" Height="12">
+                        <Ellipse Width="12" Height="12" Fill="Red" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             
+                             ></Ellipse>
+                        <TextBlock Foreground="White" FontWeight="Heavy" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                               ToolTip="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                               >X</TextBlock>
+                    </Grid>
+                    <TextBlock Foreground="Red" Margin="2,0,0,0" 
+                           Text="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                           ></TextBlock>
+                </StackPanel>
+                <AdornedElementPlaceholder x:Name="ErrorAdorner" ></AdornedElementPlaceholder>
+            </DockPanel>
+        </ControlTemplate>
+
+    </Window.Resources>
+
     <Grid Height="514" Margin="0,0,0.4,-1.2" VerticalAlignment="Top">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="97,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Customer" HorizontalAlignment="Left" Margin="22,62,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="452,25,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Invoice date" HorizontalAlignment="Left" Margin="364,25,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Invoice No." HorizontalAlignment="Left" Margin="22,25,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="97,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="76,113,0,0" VerticalAlignment="Top" Height="163" Width="400" AutoGenerateColumns="False">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="97,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Customer" HorizontalAlignment="Left" Margin="22,71,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left"   Margin="445,38,0,0" VerticalAlignment="Top"  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" >
+            <DatePicker.Text>
+                <Binding Path="InvoiceDate" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:DatePickerValidator></local:DatePickerValidator>
+                    </Binding.ValidationRules>
+                </Binding>
+            </DatePicker.Text>
+        </DatePicker>
+        <Label x:Name="label1" Content="Invoice date" HorizontalAlignment="Left" Margin="357,38,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Invoice No." HorizontalAlignment="Left" Margin="22,34,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InvoiceNoTB" HorizontalAlignment="Left" Height="23" Margin="97,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="34,113,0,0" VerticalAlignment="Top" Height="163" Width="552" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding LineNumber}"  Header="No." CanUserResize="False" MinWidth="30" CanUserSort="False" CanUserReorder="False" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Id}"  Header="Id" CanUserResize="False" MinWidth="30" CanUserSort="False" CanUserReorder="False" IsReadOnly="True"/>
@@ -21,19 +54,60 @@
                 <DataGridTextColumn Binding="{Binding Price}"  Header="Price" CanUserResize="False" MaxWidth="200" MinWidth="80" CanUserSort="False" CanUserReorder="False" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Quantity}"  Header="Quantity" CanUserSort="False" CanUserReorder="False" CanUserResize="False" />
                 <DataGridTextColumn Binding="{Binding Total}"  Header="Total" CanUserResize="False" MinWidth="80" CanUserSort="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="EditButtonEvent" CommandParameter="{Binding Path=Id}" >Edit</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Click="DeleteButtonEvent" CommandParameter="{Binding Path=Id}" >Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label3" Content="Service Name" HorizontalAlignment="Left" Margin="22,292,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ServiceNameCB" HorizontalAlignment="Left" Margin="22,325,0,0" VerticalAlignment="Top" Width="109" ItemsSource="{Binding Services}"  SelectionChanged="OnMyComboBoxChanged" DisplayMemberPath="Name" SelectedValuePath="Id"/>
+        <ComboBox x:Name="ServiceNameCB"  IsEditable="True" IsTextSearchEnabled="True" Validation.ErrorTemplate="{StaticResource validationErrorTemplate}"  HorizontalAlignment="Left" Margin="22,325,0,0" VerticalAlignment="Top" Width="109" ItemsSource="{Binding Services}"  SelectionChanged="OnMyComboBoxChanged" DisplayMemberPath="Name" SelectedValuePath="Id">
+
+            <ComboBox.SelectedIndex>
+                <Binding Path="Services" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:ServiceNameValidator></local:ServiceNameValidator>
+                    </Binding.ValidationRules>
+                </Binding>
+            </ComboBox.SelectedIndex>
+
+
+        </ComboBox>
         <Label x:Name="label4" Content="Quantity" HorizontalAlignment="Left" Margin="253,292,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="QuantityTB"  HorizontalAlignment="Left" Height="23" Margin="259,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" TextChanged="QuantityTB_TextChanged"/>
+
+
+
+        <TextBox x:Name="QuantityTB"  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" HorizontalAlignment="Left" Height="23" Margin="259,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" TextChanged="QuantityTB_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Quantity" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:QuantityValidator></local:QuantityValidator>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+
+
         <Label x:Name="label5" Content="Total" HorizontalAlignment="Left" Margin="357,292,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="TotalTB" HorizontalAlignment="Left" Height="23" Margin="357,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <Button x:Name="button" Content="Add" HorizontalAlignment="Left" Margin="503,325,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="AddItemButton" Content="Add Item" HorizontalAlignment="Left" Margin="503,325,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Label x:Name="label6" Content="Price" HorizontalAlignment="Left" Margin="160,292,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="PriceTB" HorizontalAlignment="Left" Height="23" Margin="168,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" IsEnabled="False"/>
-        <Button x:Name="button1" Content="Save" HorizontalAlignment="Left" Margin="503,460,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Cancel" HorizontalAlignment="Left" Margin="402,460,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.909,1.026"/>
+        <Button x:Name="SaveInvoiceButton" Content="Save" HorizontalAlignment="Left" Margin="503,460,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="CancelInvoiceAddButton" Content="Cancel" HorizontalAlignment="Left" Margin="402,460,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.909,1.026"/>
+        <Button x:Name="SaveItemChangesButton" Content="Save Changes" HorizontalAlignment="Left" Margin="503,349,0,0" VerticalAlignment="Top" Width="75" Click="SaveItemChangesButton_Click"/>
+        <Button x:Name="CancelEditButton" Content="Cancel" HorizontalAlignment="Left" Margin="601,349,0,0" VerticalAlignment="Top" Width="75" Click="CancelEditButton_Click"/>
 
     </Grid>
 </Window>
