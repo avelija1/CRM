@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,9 @@ namespace CRMVersion1._0
         private CRMV1Entities _context;
         private string fileName;
         private byte[] imageInBytes;
+        public String CompanyName { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public CompanyWindow()
         {
             InitializeComponent();
@@ -41,6 +45,7 @@ namespace CRMVersion1._0
                 fileName = myCompany.FileName;
                 imageInBytes = myCompany.Data;
             }
+            DataContext = this;
         }
         //Save- Add or Edit Company details
         private void button_Click(object sender, RoutedEventArgs e)
@@ -92,7 +97,13 @@ namespace CRMVersion1._0
                 }
             }
         }
-        
+
+        private void OnPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+        }
+
         private bool CheckIfDataInFieldsAreValid()
         {
             if (CompanyNameTB.Text == "")

@@ -32,7 +32,7 @@
     </Window.Resources>
 
     <Grid Height="514" Margin="0,0,0.4,-1.2" VerticalAlignment="Top">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="97,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CustomerTB" HorizontalAlignment="Left" Height="23" Margin="97,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
         <Label x:Name="label" Content="Customer" HorizontalAlignment="Left" Margin="22,71,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left"   Margin="445,38,0,0" VerticalAlignment="Top"  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}" >
             <DatePicker.Text>

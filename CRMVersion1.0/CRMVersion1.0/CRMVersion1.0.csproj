@@ -205,6 +205,7 @@
     <Compile Include="ServiceWindow.xaml.cs">
       <DependentUpon>ServiceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validators\CompanyNameValidator.cs" />
     <Compile Include="Validators\DatePickerValidator.cs" />
     <Compile Include="Validators\QuantityValidator.cs" />
     <Compile Include="Validators\ServiceNameValidator.cs" />

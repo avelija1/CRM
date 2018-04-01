@@ -34,6 +34,7 @@ namespace CRMVersion1._0
         {
             InitializeComponent();
             SwitchMode();
+            CustomerTB.Text = "Almedin";
             using (CRMV1Entities _context = new CRMV1Entities())
             {
                 Services = new List<Service>();
@@ -141,7 +142,7 @@ namespace CRMVersion1._0
 
         private void QuantityTB_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //If it is not number, then trigger validation in catch block!
+        
            try
             {
                 Convert.ToInt32(QuantityTB.Text);
@@ -188,11 +189,11 @@ namespace CRMVersion1._0
         {
             try
             {
-                SwitchMode(false);
                 var button = (Button)sender;
                 int id = Convert.ToInt32(button.CommandParameter);
                 if (id != 0)//Case when we do not have any data in row
                 {
+                    SwitchMode(false);
                     idOfDatagridItemToEdit = id;
                     foreach (DataRow row in dt.Rows)
                     {

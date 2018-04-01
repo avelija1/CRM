@@ -3,9 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CRMVersion1._0"
+        xmlns:local="clr-namespace:CRMVersion1._0.Validators"
+       
         mc:Ignorable="d"
         Title="CompanyWindow" Height="402.258" Width="547.241" Background="White">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="validationErrorTemplate">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                    <Grid Width="12" Height="12">
+                        <Ellipse Width="12" Height="12" Fill="Red" HorizontalAlignment="Center" VerticalAlignment="Center"
+                             
+                             ></Ellipse>
+                        <TextBlock Foreground="White" FontWeight="Heavy" FontSize="8" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"
+                               ToolTip="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                               >X</TextBlock>
+                    </Grid>
+                    <TextBlock Foreground="Red" Margin="2,0,0,0" 
+                           Text="{Binding ElementName=ErrorAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                           ></TextBlock>
+                </StackPanel>
+                <AdornedElementPlaceholder x:Name="ErrorAdorner" ></AdornedElementPlaceholder>
+            </DockPanel>
+        </ControlTemplate>
+
+    </Window.Resources>
     <Grid Margin="0,2,4,-2">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="379*"/>
@@ -18,7 +41,15 @@
         <Label x:Name="label_Copy" Content="Company name" HorizontalAlignment="Left" Margin="23,10,0,0" VerticalAlignment="Top" FontFamily="Kollektif" Width="423" Height="52" FontSize="36" Foreground="#FFFFD595" Grid.ColumnSpan="2"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="110" Margin="23,93,0,0" VerticalAlignment="Top" Width="153" OpacityMask="#FFB01919"/>
         <StackPanel HorizontalAlignment="Left" Height="155" Margin="302,76,0,0" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2">
-            <TextBox x:Name="CompanyNameTB" Text="Company Name" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0" />
+            <TextBox x:Name="CompanyNameTB"  Validation.ErrorTemplate="{StaticResource validationErrorTemplate}"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0" >
+                <TextBox.Text>
+                    <Binding Path="CompanyName" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:CompanyNameValidator></local:CompanyNameValidator>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
             <TextBox x:Name="AdressTB" Text="Adress" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
             <TextBox x:Name="TelephoneTB" Text="Telephone" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
             <TextBox x:Name="WebSiteTB" Text="Website" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Background="#FFFFD595" BorderBrush="White" BorderThickness="1" FontFamily="Roboto" FontSize="16" Margin="8,10,0,0"/>
